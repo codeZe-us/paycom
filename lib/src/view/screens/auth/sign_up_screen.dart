@@ -113,20 +113,22 @@ class _SignUpScreenState extends State<SignUpScreen> with WidgetsBindingObserver
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: ColorManager.backgroundColor,
-          title: Text(
-            LabelManager.payCOM,
-            style: PoppinsStyle.bold15.copyWith(color: ColorManager.darkBlue),
-          ),
-        ),
         body: Container(
+          color: ColorManager.backgroundColor, 
           width: usableWidth,
+          height: usableHeight,
           padding: EdgeInsets.symmetric(horizontal: usableHeight * (32 / 800)),
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SpacingManager.h15,
+              Center(
+                child: Text(
+                          LabelManager.payCOM,
+                          style: PoppinsStyle.bold15.copyWith(color: ColorManager.darkBlue),
+                        ),
+              ),
+                
                 SpacingManager.h15,
                 Text(LabelManager.join, style: PoppinsStyle.medium15.copyWith(color: ColorManager.darkBlue2)),
                 SpacingManager.h22,

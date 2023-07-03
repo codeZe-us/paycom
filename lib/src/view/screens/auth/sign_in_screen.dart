@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
 import 'dart:developer';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:paycom/src/services/api_service.dart';
-import 'package:paycom/src/viewmodel/auth/providers/loading_provider.dart';
 import 'package:paycom/src/viewmodel/controllers/new_user_controller.dart';
 
 import '../../../core/constants/managers/color_manager.dart';
@@ -117,20 +115,20 @@ class _SignInState extends State<SignIn> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: ColorManager.backgroundColor,
-          elevation: 0,
-          title: Text(
-            LabelManager.payCOM,
-            style: PoppinsStyle.bold15.copyWith(color: ColorManager.darkBlue),
-          ),
-        ),
         body: Container(
           width: usableWidth,
+          height: usableHeight,
+          color: ColorManager.backgroundColor,
           padding: EdgeInsets.symmetric(horizontal: usableHeight * (32 / 800)),
           child: Column(
             children: [
+                  SpacingManager.h15,
+              Center(
+                child: Text(
+                          LabelManager.payCOM,
+                          style: PoppinsStyle.bold15.copyWith(color: ColorManager.darkBlue),
+                        ),
+              ),
               SpacingManager.h15,
               Text(
                 LabelManager.welcome,
